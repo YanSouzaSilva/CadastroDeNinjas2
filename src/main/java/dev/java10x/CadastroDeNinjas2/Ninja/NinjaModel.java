@@ -1,4 +1,5 @@
 package dev.java10x.CadastroDeNinjas2.Ninja;
+import dev.java10x.CadastroDeNinjas2.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,4 +23,8 @@ public class NinjaModel {
     private int idade;
 
     private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "missao_id") //chave estrangeira
+    private MissoesModel missao;
 }
