@@ -2,3 +2,7 @@
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TB_MISSAO" not found; SQL statement:
 INSERT INTO TB_MISSAO(nome,dificuldade)
 VALUES('Resgatar Gato', 'Fácil') [42102-224]
+2026-04-27 12:21:49.953633-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_CADASTRO(nome, idade, email, img_url, missao_id)\000d\000aVALUES('Uzumaki Naruto', 14, 'naruto@email.com'. [*]'https://www.img.com/naruto', 1)"; expected "identifier"; SQL statement:
+INSERT INTO TB_CADASTRO(nome, idade, email, img_url, missao_id)
+VALUES('Uzumaki Naruto', 14, 'naruto@email.com'. 'https://www.img.com/naruto', 1) [42001-224]

@@ -32,7 +32,7 @@ public class MissoesController {
 
     @DeleteMapping("/deletar")
     public String deletarMissaoID(){
-        return "Mostrando todas missões";
+        return "Missao deletada";
     }
 
 }
