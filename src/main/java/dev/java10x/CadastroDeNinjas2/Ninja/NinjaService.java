@@ -5,7 +5,7 @@ import java.util.List;
 @Service
 public class NinjaService {
 
-    private NinjaRepository ninjaRepository;
+    private final NinjaRepository ninjaRepository;
 
     public NinjaService(NinjaRepository ninjaRepository) {
         this.ninjaRepository = ninjaRepository;
@@ -15,5 +15,8 @@ public class NinjaService {
     public List<NinjaModel> listarNinjas(){
         return ninjaRepository.findAll();
     }
+
+    //Listar ninja pelo ID
+
 
 }
