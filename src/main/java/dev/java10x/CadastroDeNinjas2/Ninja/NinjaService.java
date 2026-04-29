@@ -24,13 +24,22 @@ public class NinjaService {
     }
 
     // Criar Ninja
-    public NinjaModel criarNinja(NinjaModel ninja){
-        return ninjaRepository.save(ninja);
+    public NinjaModel criarNinja(NinjaModel ninjaCriado){
+        return ninjaRepository.save(ninjaCriado);
     }
 
     // Deletar Ninja
     public void deletarNinjaPorId(Long id){
         ninjaRepository.deleteById(id);
+    }
+
+    // Atualizar Ninja
+    public NinjaModel atualizarNinjaPorId(Long id, NinjaModel ninjaAtualizado){
+        if(ninjaRepository.existsById(id)){
+            ninjaAtualizado.setId(id);
+            return ninjaRepository.save(ninjaAtualizado);
+        }
+        return null;
     }
 
 }
