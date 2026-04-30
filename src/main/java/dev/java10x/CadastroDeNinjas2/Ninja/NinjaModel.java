@@ -28,6 +28,9 @@ public class NinjaModel {
     @Column(unique = true)
     private String email;
 
+    @Column(name = "rank")
+    private String rank;
+
     @ManyToOne
     @JoinColumn(name = "missao_id") //chave estrangeira
     private MissoesModel missao;
