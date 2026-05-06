@@ -1,0 +1,49 @@
+<!
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabela de Ninjas</title>
+</head>
+<body>
+    <h1>Lista de ninjas</h1>
+
+    <table>
+        <thead>
+            <tr>
+
+                <th>Imagem</th>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Email</th>
+                <th>Rank</th>
+                <th>Missao</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each = "ninja: ${ninjas}">
+                <td> <img th:src="${ninja.imgUrl}" width="100" height="100"> </td>
+                <td th:text="${ninja.id}"> </td>
+                <td th:text="${ninja.nome}"> </td>
+                <td th:text="${ninja.idade}"> </td>
+                <td th:text="${ninja.email}"> </td>
+                <td th:text="${ninja.rank}"> </td>
+
+                <td>
+                    <span th:if="${ninja.missao}">Nome: <span th:text="${ninja.missao.nome}"></span>, Dificuldade: <span th:text="${ninja.missao.dificuldade}"></span> </span>
+                    <span th:if="${ninja.missao == null}">Sem Missão</span>
+                </td>
+
+                <td>
+                    <a>Ver detalhes</a>
+                    <a>Alterar</a>
+                    <a th:href="@{/ninjas/ui/deletar/{id}(id=${ninja.id})}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
