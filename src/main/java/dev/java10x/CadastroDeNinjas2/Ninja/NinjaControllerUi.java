@@ -28,4 +28,10 @@ public class NinjaControllerUi {
         ninjaService.deletarNinjaPorId(id);
         return "redirect:/ninjas/ui/listar";
     }
+
+    @GetMapping("/listar/id")
+    public String listarNinjasPorId(@PathVariable Long id){
+        NinjaDTO ninja = ninjaService.listarNinjasPorId(id);
+        return "redirect:/ninjas/ui/listar";
+    }
 }
