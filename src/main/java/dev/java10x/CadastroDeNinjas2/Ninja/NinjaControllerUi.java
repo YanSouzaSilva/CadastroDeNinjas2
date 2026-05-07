@@ -34,7 +34,7 @@ public class NinjaControllerUi {
         NinjaDTO ninja =  ninjaService.listarNinjasPorId(id);
         if (ninja !=null) {
             model.addAttribute("ninja", ninja);
-            return "detalhesninja";
+            return "detalhesNinja";
         } else {
             model.addAttribute("mensagem", "Ninja não encontrado");
             return "listarNinjas";
